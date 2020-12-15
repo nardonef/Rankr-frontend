@@ -59,4 +59,4 @@ buck-out/
 /ios/Pods/
 
 
-./src/constants.js
+/src/constants.js
