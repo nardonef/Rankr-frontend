@@ -7,6 +7,8 @@ import StyleConsts from "../style/styleConstants";
 import SearchResult from "../components/searchResult";
 import Loader from '../components/loader'
 import FlashMessage from "react-native-flash-message";
+const {GCP_PLACES_API_KEY} = require('../constants').constants;
+
 
 const Search = ({navigation, route}) => {
     const collection = route.params.collection;
@@ -20,7 +22,7 @@ const Search = ({navigation, route}) => {
     const searchRestaruants = async () => {
         setShowLoader(true)
         try {
-            const res = await fetch(`https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+in+${searchText}&key=AIzaSyBwAIrz434HnKm1Zr0MfJZwhOMFCwCfppo`);
+            const res = await fetch(`https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+in+${searchText}&key=${GCP_PLACES_API_KEY}`);
 
             console.log(res.status); // Will show you the status
             console.log(res.ok);
