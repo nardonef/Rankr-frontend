@@ -26,6 +26,10 @@ const LogIn = ({ navigation }) => {
 
 
     const logIn = async () => {
+        if (email === '' || password === '') {
+            return;
+        }
+
         setShowLoader(true)
         try {
             const response = await api('POST', '/log-in', null, null, {
@@ -72,6 +76,7 @@ const LogIn = ({ navigation }) => {
                 <View style={{marginTop: 40}}>
                     <Text style={styles.inputText}>Password</Text>
                     <TextInput
+                        secureTextEntry={true}
                         style={styles.input}
                         onChangeText={text => setPassword(text)}
                         value={password}
