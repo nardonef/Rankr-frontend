@@ -24,7 +24,7 @@ const Search = ({navigation, route}) => {
         try {
             const res = await fetch(`https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+in+${searchText}&key=${GCP_PLACES_API_KEY}`);
 
-            console.log(res.status); // Will show you the status
+            console.log(res.status);
             console.log(res.ok);
             if (!res.ok) {
                 throw await res.json();
@@ -107,7 +107,6 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         paddingTop: StyleConsts.smallMargin,
         backgroundColor: StyleConsts.backgroundColor,
-
     },
     back: {
         paddingTop: StyleConsts.smallMargin,
@@ -116,6 +115,9 @@ const styles = StyleSheet.create({
         color: StyleConsts.secondaryColor,
         paddingBottom: StyleConsts.smallMargin,
         fontWeight: "bold",
+    },
+    searchBar: {
+        color: StyleConsts.backgroundColor,
     }
 });
 

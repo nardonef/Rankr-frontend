@@ -8,6 +8,7 @@ import StyleConsts from "../style/styleConstants";
 import Loader from '../components/loader'
 import FlashMessage from "react-native-flash-message";
 import _ from 'lodash';
+import Collection from '../components/collection'
 
 const Home = ({navigation}) => {
     const [collections, setCollections] = useState([]);
@@ -60,19 +61,7 @@ const Home = ({navigation}) => {
             </Text>
             <ScrollView style={styles.scrollView}>
                 {collections && collections.map((collection) => {
-                    return <TouchableOpacity
-                                onPress={() => navigation.navigate('Collection', {collection})}
-                                style={styles.collectionContainer}
-                            >
-                        <View style={styles.collectionTextContainer}>
-                            <Text style={styles.collectionNameText}>{collection.name}</Text>
-                            {/*TODO*/}
-                            <Text style={styles.collectionContainerText}>{collection.sort}</Text>
-                            <Text style={styles.collectionContainerText}>{collection.items.length} Items</Text>
-                        </View>
-                        <View>
-                        </View>
-                    </TouchableOpacity>
+                    return <Collection navigation={navigation} collection={collection}/>
                 })}
             </ScrollView>
             <Text style={styles.logOut} onPress={logOut}>LOGOUT</Text>
@@ -104,33 +93,11 @@ const styles = StyleSheet.create({
         color: StyleConsts.secondaryColor,
         paddingRight: StyleConsts.margin
     },
-    collectionContainer: {
-        borderBottomColor: "black",
-        borderBottomWidth: .3,
-        flex: 1,
-        flexDirection: 'row',
-        height: 100 ,
-        alignItems: 'center',
-        justifyContent: 'space-between',
-    },
-    collectionContainerText: {
-        color: 'white',
-        fontWeight: 'bold',
-        fontSize: StyleConsts.text,
-    },
-    collectionNameText: {
-        color: 'white',
-        fontWeight: 'bold',
-        fontSize: StyleConsts.largeText,
-    },
     logOut: {
         alignSelf: 'center',
         fontWeight: 'bold',
         color: StyleConsts.secondaryColor,
         paddingTop: StyleConsts.margin
-    },
-    collectionTextContainer: {
-        paddingLeft: StyleConsts.margin,
     },
     loading: StyleConsts.loading,
 });

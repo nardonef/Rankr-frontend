@@ -62,7 +62,7 @@ const AddCollection = ({navigation, route}) => {
                         <View style={styles.picker}>
                             <RNPickerSelect
                                 textInputProps={{
-                                    color:'white',
+                                    color: StyleConsts.secondaryColor,
                                 }}
                                 placeholder={{
                                     label: 'Select a type...',
@@ -147,7 +147,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         width: 150,
         height: 50,
-        color: 'white',
+        color: StyleConsts.secondaryColor,
         backgroundColor: StyleConsts.accentColor1,
         justifyContent: 'center',
     },
