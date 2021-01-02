@@ -71,11 +71,11 @@ const AddCollection = ({navigation, route}) => {
                                 placeholderTextColor="white"
                                 onValueChange={(value) => setType(value)}
                                 items={[
-                                    { label: 'Movies', value: 'movies' },
-                                    { label: 'TV Shows', value: 'tv' },
+                                    // { label: 'Movies', value: 'movies' },
+                                    // { label: 'TV Shows', value: 'tv' },
                                     { label: 'Restaurants', value: 'restaurants' },
-                                    { label: 'Beer', value: 'beer' },
-                                    { label: 'Whiskey', value: 'whiskey' },
+                                    // { label: 'Beer', value: 'beer' },
+                                    // { label: 'Whiskey', value: 'whiskey' },
                                 ]}
                             />
                         </View>

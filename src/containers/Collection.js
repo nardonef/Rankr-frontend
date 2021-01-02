@@ -27,16 +27,18 @@ const Collection = ({navigation, route}) => {
         setShowLoader(true);
         try {
             const response = await api('GET', `/collection/${collection.name}`, tokens, email);
+            console.log(response);
             if (!response[0]) {
-                console.log(response);
-                errorMessageRef.current.showMessage({
-                    message: 'Error getting collection items',
-                    type: "danger",
-                });
+                setShowLoader(false);
+                return;
             }
             setItems(response[0].items);
         } catch (e) {
             console.log(e)
+            errorMessageRef.current.showMessage({
+                message: 'Error getting collection items',
+                type: "danger",
+            });
         }
         setShowLoader(false);
     }
