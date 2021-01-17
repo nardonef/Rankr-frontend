@@ -58,7 +58,7 @@ const SignUp = ({ navigation }) => {
         addEmails(email);
         addTokens(response);
         setShowLoader(false);
-        navigation.navigate('Home');
+        navigation.navigate('Walkthrough');
     }
 
     return (
@@ -77,6 +77,7 @@ const SignUp = ({ navigation }) => {
                 <View style={{marginTop: 40}}>
                     <Text style={styles.inputText}>Password</Text>
                     <TextInput
+                        secureTextEntry={true}
                         style={styles.input}
                         onChangeText={text => setPassword(text)}
                         value={password}
