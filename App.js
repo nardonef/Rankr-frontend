@@ -12,6 +12,7 @@ import AddCollection from "./src/containers/AddCollection";
 import Search from "./src/containers/Search"
 import Collection from "./src/containers/Collection";
 import SignUp from "./src/containers/SignUp"
+import Walkthrough from "./src/containers/Walkthrough"
 
 const App = () => {
   const Stack = createStackNavigator();
@@ -32,6 +33,7 @@ const App = () => {
               <Stack.Screen name="AddCollection" component={AddCollection}/>
               <Stack.Screen name="Search" component={Search}/>
               <Stack.Screen name="SignUp" component={SignUp}/>
+              <Stack.Screen name="Walkthrough" component={Walkthrough}/>
           </Stack.Navigator>
         </NavigationContainer>
       </StoreProvider>
